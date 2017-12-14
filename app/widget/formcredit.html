@@ -1,0 +1,29 @@
+<form novalidate name="credit">
+    <div class="form-group">
+        <label for="inputNom">Nom</label>
+        <input type="text" name="nom" class="form-control" id="inputNom" placeholder="Nom" ng-model="personne.nom" required>
+        <span ng-show="credit.nom.$invalid" style="color: red">erreur de saisie</span>
+    </div>
+    <div class="form-group">
+        <label for="inputPrenom">Prenom</label>
+        <input type="text" class="form-control" name="prenom" id="inputPrenom"  placeholder="Prenom" ng-model="personne.prenom" required>
+        <span ng-show="credit.prenom.$invalid" style="color: red">erreur de saisie</span>
+    </div>
+    <div class="form-group">
+        <label for="inputMontant">Montant du crédit</label>
+        <select ng-options="montant for montant in montants" id="inputMontant" name="montant" ng-model="personne.montant"></select>
+        <span ng-show="credit.montant.$invalid" style="color: red">erreur de saisie</span>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="inputEmail"  placeholder="@mail" name="mail" ng-model="personne.mail">
+        <span ng-show="credit.mail.$invalid" style="color: red">erreur de saisie</span>
+    </div>
+    <div class="form-group">
+        <label for="inputTel">Téléphone</label>
+        <input type="text" class="form-control" id="inputTel"  placeholder="Téléphone" name="telephone" ng-model="personne.telephone">
+        <span ng-show="credit.telephone.$invalid" style="color: red">erreur de saisie</span>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="savePersonne()">Valider</button>
+    <button type="submit" class="btn btn-primary" ng-click="addCredit(personne)">Envoyer</button>
+</form>

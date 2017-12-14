@@ -1,0 +1,20 @@
+<form novalidate name="list">
+    <div>
+        <table class="table table-striped">
+            <tr>
+               <th>nom</th>
+               <th>prenom</th>
+               <th>mail</th>
+               <th>tel</th>
+               <th>montant</th>
+            </tr>
+            <tr ng-repeat="personne in personnes | orderBy:'nom'">
+                <td>{{personne.nom}}</td>
+                <td>{{personne.prenom}}</td>
+                <td>{{personne.mail}}</td>
+                <td>{{personne.telephone}}</td>
+                <td>{{personne.montant | currency:'EUR'}}</td>
+            </tr>
+        </table>
+    </div>       
+</form>
