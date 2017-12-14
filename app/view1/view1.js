@@ -57,3 +57,4 @@ angular.module('myApp.view1', ['ngRoute'])
     templateUrl:'../widget/formcredit.html'
   }
 });
+

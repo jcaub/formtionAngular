@@ -1,4 +1,23 @@
 <div ng-controller="View2Ctrl">
     <menu-credit></menu-credit>
-    <form-list></form-list>
+  
+        <div>
+            <table class="table table-striped">
+                <tr>
+                   <th>nom</th>
+                   <th>prenom</th>
+                   <th>mail</th>
+                   <th>tel</th>
+                   <th>montant</th>
+                </tr>
+                <tr ng-repeat="personne in collecCredit.data | orderBy:'nom'">
+                    <td>{{personne.nom}}</td>
+                    <td>{{personne.prenom}}</td>
+                    <td>{{personne.mail}}</td>
+                    <td>{{personne.telephone}}</td>
+                    <td>{{personne.montant | currency:'EUR'}}</td>
+                </tr>
+            </table>
+        </div>       
+        <button type="submit" class="btn btn-primary" ng-click="recupInfo()">Show Infos</button>
 </div>

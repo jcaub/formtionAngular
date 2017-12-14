@@ -9,8 +9,18 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', ['$scope',function($scope) {
-
+.controller('View2Ctrl', ['$scope','$http',function($scope,$http) {
+  $scope.recupInfo=function(){
+    $http({
+      method:'GET',
+      url:'../models/listcredits.json'
+    }).then(function successCallback(response){
+      $scope.collecCredit=response;
+      console.log($scope.data);
+    }, function errorCallback(response){
+      console.log(response);
+    });
+  };
 }])
 
 .directive('formList',function(){
@@ -19,3 +29,4 @@ angular.module('myApp.view2', ['ngRoute'])
     templateUrl:'../widget/formlistapp.html'
   }
 });
+
